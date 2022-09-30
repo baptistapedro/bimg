@@ -1,0 +1,6 @@
+project: bimg-go
+target: bimg-go
+cmds:
+
+  - cmd: /bimg_go_fuzz @@
+    env: {}
