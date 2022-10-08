@@ -18,11 +18,13 @@ RUN rm -f ./testdata/*.jp2
 RUN rm -f ./testdata/*.avif
 RUN rm -f ./testdata/test_exif_full.jpg
 RUN rm -f ./testdata/northern_cardinal_bird.jpg
+RUN mkdir ./testsuite/
+RUN cp ./testdata/*.jpg ./testsuite/
 
 FROM golang:1.19.1-buster
 RUN apt-get update  && apt install -y libvips-dev --no-install-recommends
 COPY --from=builder /bimg/fuzz_bimg_reader /
-COPY --from=builder /bimg/testdata/*.jpg /testsuite/
+COPY --from=builder /bimg/testsuite/*.jpg /testsuite/
 
 ENTRYPOINT []
 CMD ["/fuzz_bimg_reader", "@@"] 
