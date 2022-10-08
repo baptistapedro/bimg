@@ -1,3 +1,5 @@
+package main
+
 import (
   "os"
   "github.com/h2non/bimg"
