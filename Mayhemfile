@@ -1,5 +1,5 @@
-project: bimg-go
-target: bimg-go
+project: bimg
+target: bimg
 cmds:
 
   - cmd: /bimg_go_fuzz @@
