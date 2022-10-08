@@ -28,4 +28,4 @@ COPY --from=builder /bimg/bimg_fuzz/fuzz_bimg_reader /
 COPY --from=builder /bimg/testdata/*.jpg /testsuite/
 
 ENTRYPOINT []
-CMD ["/fuzz_bimg_reader", "@@"] 
+CMD /fuzz_bimg_reader @@
